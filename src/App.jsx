@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InitialPopup from "./components/InitialPopup";
+import CenteredPopup from "./components/CenteredPopup";
 import "./App.css";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <InitialPopup></InitialPopup>
+      <CenteredPopup></CenteredPopup>
     </>
   );
 }
