@@ -26,3 +26,9 @@ This web mini-game provides the player with a variable number of randomly genera
   - Install dependencies using "npm install"
   - Run "npm run dev"
   - Type "o" into the console then press enter to open live preview.
+
+## Image Acknowledgements
+
+Many thanks to:
+
+- Photo by <a href="https://unsplash.com/@kyledevaras?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kyle Gregory Devaras</a> on <a href="https://unsplash.com/photos/nebulas-QFjSiok61xA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

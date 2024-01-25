@@ -1,3 +1,5 @@
-export default function CenteredPopup() {
-  return <h1>Test</h1>;
+import "../styles/CenteredPopup.css";
+
+export default function CenteredPopup({ children }) {
+  return <div className="centered-popup">{children}</div>;
 }

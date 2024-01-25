@@ -7,7 +7,9 @@ function App() {
 
   return (
     <>
-      <CenteredPopup></CenteredPopup>
+      <CenteredPopup>
+        <h1>Test</h1>
+      </CenteredPopup>
     </>
   );
 }
