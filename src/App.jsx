@@ -24,6 +24,7 @@ function App() {
           <li>Try to choose all images without duplication.</li>
           <li>Defeat the cat wizard!</li>
         </ul>
+        <button>Venture Forth</button>
       </CenteredPopup>
     </>
   );
