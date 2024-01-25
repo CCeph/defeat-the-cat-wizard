@@ -1,11 +1,15 @@
 @import "./RootVariables.css";
 
+.popup-border-wrapper {
+  background-image: linear-gradient(to top right, #75553c, #ceaa4f);
+  padding: 5px;
+  border-radius: 7px;
+}
+
 .centered-popup {
-  border: 3px solid var(--primary-border-color);
-  border-radius: 5px;
   padding: 10px;
-  background-image: url("../resources/stars-space-brown-top-gradient.png");
-  background-position: center;
+  border-radius: 7px;
+  background-color: black;
   color: white;
   height: 500px;
   width: 500px;
