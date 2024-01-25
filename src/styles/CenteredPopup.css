@@ -4,7 +4,8 @@
   border: 3px solid var(--primary-border-color);
   border-radius: 5px;
   padding: 10px;
-  background-color: black;
+  background-image: url("../resources/stars-space-brown-top-gradient.png");
+  background-position: center;
   color: white;
   height: 500px;
   width: 500px;
