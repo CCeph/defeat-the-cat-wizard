@@ -32,6 +32,23 @@
   padding: 0;
 }
 
+.centered-popup h1 {
+  font-size: 2.5rem;
+}
+
+.centered-popup h2 {
+  font-size: 2rem;
+}
+
+.centered-popup :is(h1, h2) {
+  margin: 20px 0px 10px 0px;
+}
+
+.centered-popup :is(p, ul) {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
 .centered-popup button {
   background-image: radial-gradient(#1e5d69, #043645);
   border-radius: 15% / 50%;
@@ -39,6 +56,7 @@
   padding: 8px;
   font-size: 1rem;
   border: 2px solid var(--dark-brown);
+  margin: 10px auto 0px;
 }
 
 .centered-popup button:active {
