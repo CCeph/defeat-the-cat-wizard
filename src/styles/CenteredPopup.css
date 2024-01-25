@@ -1,7 +1,11 @@
 @import "./RootVariables.css";
 
 .popup-border-wrapper {
-  background-image: linear-gradient(to top right, #75553c, #ceaa4f);
+  background-image: linear-gradient(
+    to top right,
+    var(--dark-brown),
+    var(--light-brown)
+  );
   padding: 5px;
   border-radius: 7px;
 }
@@ -26,4 +30,17 @@
 .centered-popup ul li {
   margin: 0;
   padding: 0;
+}
+
+.centered-popup button {
+  background-image: radial-gradient(#1e5d69, #043645);
+  border-radius: 15% / 50%;
+  color: white;
+  padding: 8px;
+  font-size: 1rem;
+  border: 2px solid var(--dark-brown);
+}
+
+.centered-popup button:active {
+  box-shadow: var(--clickedButtonShadow);
 }
