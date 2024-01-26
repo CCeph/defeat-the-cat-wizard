@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+body {
+  background-image: url("./resources/cat-dungeon-3.png");
+  background-position: center;
+  background-size: cover;
+}
