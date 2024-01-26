@@ -8,6 +8,9 @@
   top: 0;
   left: 0;
   z-index: -1;
-  filter: blur(4px);
   scale: 1.1;
+}
+
+.main-background.blur {
+  filter: blur(4px);
 }
