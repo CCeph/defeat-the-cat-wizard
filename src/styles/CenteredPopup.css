@@ -8,7 +8,9 @@
   );
   padding: 5px;
   border-radius: 7px;
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -17,6 +19,8 @@
   border-radius: 7px;
   background-color: black;
   color: white;
+  max-height: 550px;
+  overflow-y: auto;
 }
 
 .centered-popup {
@@ -29,9 +33,21 @@
   padding: 0;
 }
 
-.centered-popup ul li {
-  margin: 0;
-  padding: 0;
+@media (max-width: 800px) {
+  .centered-popup ul {
+    text-align: left;
+    list-style-type: circle;
+  }
+
+  .popup-border-wrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .popup-border-wrapper {
+    width: 80%;
+  }
 }
 
 .centered-popup h1 {
