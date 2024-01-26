@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+      <div className="main-background"></div>
       <CenteredPopup>
         <h1>Defeat the Evil Cat Wizard</h1>
         <p>

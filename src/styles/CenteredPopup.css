@@ -8,6 +8,8 @@
   );
   padding: 5px;
   border-radius: 7px;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .centered-popup {
