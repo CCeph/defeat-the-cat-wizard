@@ -10,8 +10,6 @@ function App() {
     setInitialPopupVisible(false);
   }
 
-  console.log(initialPopupVisibile);
-
   return (
     <>
       <div
