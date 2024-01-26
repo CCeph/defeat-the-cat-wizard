@@ -5,17 +5,9 @@
   height: 100vh;
   width: 100vw;
   transition: filter 0.3s ease-in;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
-}
-
-.main-background.blur::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(4px); /* apply the blur */
-  pointer-events: none; /* make the overlay click-through */
+  filter: blur(4px);
+  scale: 1.1;
 }
