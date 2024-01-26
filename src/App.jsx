@@ -10,6 +10,8 @@ function App() {
     setInitialPopupVisible(false);
   }
 
+  console.log(initialPopupVisibile);
+
   return (
     <>
       <div
@@ -17,8 +19,8 @@ function App() {
           initialPopupVisibile ? "main-background blur" : "main-background"
         }
       ></div>
-      {initialPopupVisibile && (
-        <CenteredPopup>
+      {
+        <CenteredPopup initialPopupVisibile={initialPopupVisibile}>
           <h1>Defeat the Evil Cat Wizard</h1>
           <p>
             The cat wizard trapped all cats under his spell to build his own
@@ -37,7 +39,7 @@ function App() {
           </ul>
           <button onClick={hideInitialPopup}>Venture Forth</button>
         </CenteredPopup>
-      )}
+      }
     </>
   );
 }

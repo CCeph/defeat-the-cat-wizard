@@ -12,6 +12,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.popup-border-wrapper.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .centered-popup {
