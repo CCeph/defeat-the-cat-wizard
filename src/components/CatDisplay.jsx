@@ -18,7 +18,7 @@ function shuffle(array) {
     return array;
   }
 
-export default function CatDisplay({currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats}) {
+export default function CatDisplay({callNewImages, setCallNewImages,currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats}) {
     const [chosenCats, setChosenCats] = useState([]);
 
     function handlePlayerChoice(e) {
@@ -27,6 +27,7 @@ export default function CatDisplay({currentScore, setCurrentScore, bestScore, se
             (currentScore > bestScore) && setBestScore(currentScore);
             setCurrentScore(0);
             setChosenCats([]);
+            setCallNewImages(!callNewImages)
         } else {
             setCurrentScore(currentScore => currentScore + 1)
             setChosenCats([...chosenCats, chosenCatID])

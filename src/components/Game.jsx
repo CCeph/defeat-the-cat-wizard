@@ -7,20 +7,21 @@ export default function Game({initialPopupVisibile}) {
   const [bestScore, setBestScore] = useState(0);
   const [numberOfCats, setNumberOfCats] = useState(10);
   const [cats, setCats] = useState([]);
+  const [callNewImages, setCallNewImages] = useState(true);
   useEffect(() => {
     fetch(
-      "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_O4dzD01s7D9AixxR03lHboS5hbt3UlmN7qrxMps5N56q8x31KgjglLgSGtdxXkoR",
+      "https://api.thecatapi.com/v1/images/search?limit=10&api_key=live_O4dzD01s7D9AixxR03lHboS5hbt3UlmN7qrxMps5N56q8x31KgjglLgSGtdxXkoR",
     )
       .then((response) => response.json())
       .then((data) => setCats(data));
-  }, []);
+  }, [callNewImages]);
   return (
     <div className={"game " + (initialPopupVisibile && "blur")}>
       <div className="scoreboard">
         <p>Current Score: {currentScore}</p>
         <p>Best Score: {bestScore}</p>
       </div>
-      <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
+      <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats} callNewImages={callNewImages} setCallNewImages={setCallNewImages}></CatDisplay>
     </div>
   );
 }
