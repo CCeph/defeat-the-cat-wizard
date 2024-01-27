@@ -10,4 +10,25 @@
 
 .cat-display {
   flex: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  background-image: linear-gradient(
+    to top right,
+    var(--dark-brown),
+    var(--light-brown)
+  );
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
 }
