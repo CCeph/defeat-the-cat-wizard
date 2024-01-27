@@ -1,3 +1,13 @@
-.game h1 {
-  color: white;
+.game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.scoreboard {
+  flex: 1;
+}
+
+.cat-display {
+  flex: 2;
 }

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "../styles/Game.css"
+import CatDisplay from "./CatDisplay";
 
 export default function Game() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -12,5 +14,10 @@ export default function Game() {
       .then((response) => response.json())
       .then((data) => setCats(data));
   }, []);
-  return <h1>The game is here</h1>;
+  return (
+    <div className="game">
+      <div className="scoreboard"></div>
+      <CatDisplay setCurrentScore={setCurrentScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
+    </div>
+  );
 }
