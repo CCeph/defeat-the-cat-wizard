@@ -20,7 +20,7 @@ export default function Game({initialPopupVisibile}) {
         <p>Current Score: {currentScore}</p>
         <p>Best Score: {bestScore}</p>
       </div>
-      <CatDisplay setCurrentScore={setCurrentScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
+      <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
     </div>
   );
 }

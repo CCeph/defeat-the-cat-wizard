@@ -18,11 +18,19 @@ function shuffle(array) {
     return array;
   }
 
-export default function CatDisplay({setCurrentScore, setBestScore, numberOfCats, cats}) {
+export default function CatDisplay({currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats}) {
     const [chosenCats, setChosenCats] = useState([]);
 
     function handlePlayerChoice(e) {
-        setChosenCats([...chosenCats, e.target.dataset.id])
+        const chosenCatID = e.target.dataset.id;
+        if (chosenCats.includes(chosenCatID)) {
+            (currentScore > bestScore) && setBestScore(currentScore);
+            setCurrentScore(0);
+            setChosenCats([]);
+        } else {
+            setCurrentScore(currentScore => currentScore + 1)
+            setChosenCats([...chosenCats, chosenCatID])
+        }
     }
 
     const catPhotos = cats.map((cat) => 
