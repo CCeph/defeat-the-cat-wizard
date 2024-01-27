@@ -22,7 +22,7 @@ export default function Game({
   }, [callNewImages]);
   return (
     <div className={"game "
-    + (initialPopupVisibile && " blur")
+    + (initialPopupVisibile && " blur ")
     + (losePopupVisible && " blur ")
     + (winPopupVisible && " blur ")}>
       <div className="scoreboard">
