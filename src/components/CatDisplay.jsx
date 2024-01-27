@@ -1,12 +1,11 @@
 import { useState } from "react";
-import Card from "./Card";
 
 export default function CatDisplay({setCurrentScore, setBestScore, numberOfCats, cats}) {
     const [chosenCats, setChosenCats] = useState([]);
     const catPhotos = cats.map((cat) => 
-        <Card key={cat.id}>
+        <div className="card" key={cat.id}>
             <img src={cat.url} alt="cat-photo" />
-        </Card>
+        </div>
     )
     return (
         <div className="cat-display">
