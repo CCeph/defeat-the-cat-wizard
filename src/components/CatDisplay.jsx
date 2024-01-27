@@ -18,13 +18,15 @@ function shuffle(array) {
     return array;
   }
 
-export default function CatDisplay({callNewImages, setCallNewImages,currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats}) {
+export default function CatDisplay({callNewImages, setCallNewImages,currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats,
+    setLosePopupVisible}) {
     const [chosenCats, setChosenCats] = useState([]);
 
     function handlePlayerChoice(e) {
         const chosenCatID = e.target.dataset.id;
         if (chosenCats.includes(chosenCatID)) {
             (currentScore > bestScore) && setBestScore(currentScore);
+            setLosePopupVisible(true)
             setCurrentScore(0);
             setChosenCats([]);
             setCallNewImages(!callNewImages)

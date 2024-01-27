@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import "../styles/Game.css"
 import CatDisplay from "./CatDisplay";
 
-export default function Game({initialPopupVisibile}) {
-  const [currentScore, setCurrentScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+export default function Game({
+  currentScore, setCurrentScore,
+  bestScore, setBestScore,
+  initialPopupVisibile,
+  losePopupVisible, setLosePopupVisible}) {
+
   const [numberOfCats, setNumberOfCats] = useState(10);
   const [cats, setCats] = useState([]);
   const [callNewImages, setCallNewImages] = useState(true);
@@ -16,12 +19,15 @@ export default function Game({initialPopupVisibile}) {
       .then((data) => setCats(data));
   }, [callNewImages]);
   return (
-    <div className={"game " + (initialPopupVisibile && "blur")}>
+    <div className={"game "
+    + (initialPopupVisibile && " blur")
+    + (losePopupVisible && " blur ")}>
       <div className="scoreboard">
         <p>Current Score: {currentScore}</p>
         <p>Best Score: {bestScore}</p>
       </div>
-      <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats} callNewImages={callNewImages} setCallNewImages={setCallNewImages}></CatDisplay>
+      <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats} callNewImages={callNewImages} setCallNewImages={setCallNewImages}
+      setLosePopupVisible={setLosePopupVisible}></CatDisplay>
     </div>
   );
 }

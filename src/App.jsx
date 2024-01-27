@@ -4,21 +4,34 @@ import Game from "./components/Game";
 import "./App.css";
 
 function App() {
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [initialPopupVisibile, setInitialPopupVisible] = useState(true);
+  const [losePopupVisible, setLosePopupVisible] = useState(false);
 
   function hideInitialPopup() {
     setInitialPopupVisible(false);
   }
 
+  function hideLosePopup() {
+    setLosePopupVisible(false);
+  }
   return (
     <>
       <div
         className={
-          initialPopupVisibile ? "main-background blur" : "main-background"
+          "main-background "
+          + (initialPopupVisibile && " blur ")
+          + (losePopupVisible && " blur ")
         }
       ></div>
 
-      <Game initialPopupVisibile={initialPopupVisibile}></Game>
+      <Game 
+      currentScore={currentScore} setCurrentScore={setCurrentScore}
+      bestScore={bestScore} setBestScore={setBestScore}
+      initialPopupVisibile={initialPopupVisibile}
+      losePopupVisible={losePopupVisible}
+      setLosePopupVisible={setLosePopupVisible}></Game>
 
       <CenteredPopup popupVisibile={initialPopupVisibile}>
         <h1>Defeat the Evil Cat Wizard</h1>
@@ -38,6 +51,13 @@ function App() {
           <li>Defeat the cat wizard!</li>
         </ul>
         <button onClick={hideInitialPopup}>Venture Forth</button>
+      </CenteredPopup>
+
+      <CenteredPopup popupVisibile={losePopupVisible}>
+        <h1>Trapped!</h1>
+        <p>You've selected an illusion, and the cat wizard trapped you.</p>
+        <p>You managed to save {currentScore} cats, and your best attempt so far saved {bestScore} cats.</p>
+        <button onClick={hideLosePopup}>Try Again</button>
       </CenteredPopup>
     </>
   );
