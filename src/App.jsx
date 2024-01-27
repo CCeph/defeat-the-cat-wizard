@@ -20,7 +20,7 @@ function App() {
 
       <Game initialPopupVisibile={initialPopupVisibile}></Game>
 
-      <CenteredPopup initialPopupVisibile={initialPopupVisibile}>
+      <CenteredPopup popupVisibile={initialPopupVisibile}>
         <h1>Defeat the Evil Cat Wizard</h1>
         <p>
           The cat wizard trapped all cats under his spell to build his own

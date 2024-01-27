@@ -1,9 +1,9 @@
 import "../styles/CenteredPopup.css";
 
-export default function CenteredPopup({ initialPopupVisibile, children }) {
+export default function CenteredPopup({ popupVisibile, children }) {
   return (
     <div
-      className={"popup-border-wrapper " + (initialPopupVisibile && "active")}
+      className={"popup-border-wrapper " + (popupVisibile && "active")}
     >
       <div className="centered-popup">{children}</div>
     </div>
