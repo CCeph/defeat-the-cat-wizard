@@ -20,9 +20,14 @@ function shuffle(array) {
 
 export default function CatDisplay({setCurrentScore, setBestScore, numberOfCats, cats}) {
     const [chosenCats, setChosenCats] = useState([]);
+
+    function handlePlayerChoice(e) {
+        setChosenCats([...chosenCats, e.target.dataset.id])
+    }
+
     const catPhotos = cats.map((cat) => 
         <div className="card" key={cat.id}>
-            <img src={cat.url} alt="cat-photo" />
+            <img src={cat.url} alt="cat-photo" data-id={cat.id} onClick={handlePlayerChoice}/>
         </div>
     )
 
