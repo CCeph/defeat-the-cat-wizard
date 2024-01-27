@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/Game.css"
 import CatDisplay from "./CatDisplay";
 
-export default function Game() {
+export default function Game({initialPopupVisibile}) {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [numberOfCats, setNumberOfCats] = useState(10);
@@ -15,7 +15,7 @@ export default function Game() {
       .then((data) => setCats(data));
   }, []);
   return (
-    <div className="game">
+    <div className={"game " + (initialPopupVisibile && "blur")}>
       <div className="scoreboard"></div>
       <CatDisplay setCurrentScore={setCurrentScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
     </div>

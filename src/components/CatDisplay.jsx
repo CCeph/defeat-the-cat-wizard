@@ -8,7 +8,6 @@ export default function CatDisplay({setCurrentScore, setBestScore, numberOfCats,
             <img src={cat.url} alt="cat-photo" />
         </Card>
     )
-    console.log(catPhotos)
     return (
         <div className="cat-display">
             {catPhotos}

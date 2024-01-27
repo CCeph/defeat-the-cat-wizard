@@ -15,3 +15,7 @@
 .main-background.blur {
   filter: blur(4px);
 }
+
+.game.blur {
+  filter: blur(4px);
+}

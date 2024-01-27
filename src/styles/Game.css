@@ -4,6 +4,11 @@
   height: 100vh;
 }
 
+.game.blur {
+  filter: blur(4px);
+}
+
+
 .scoreboard {
   flex: 1;
 }
