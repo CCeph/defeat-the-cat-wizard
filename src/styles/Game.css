@@ -25,6 +25,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
+  gap: 10px;
 }
 
 .card {
@@ -42,4 +43,19 @@
   height: 200px;
   object-fit: cover;
   border-radius: 15px;
+}
+
+@media (max-width: 1100px) {
+  .card img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 850px) {
+  .cat-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
