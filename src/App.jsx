@@ -64,7 +64,7 @@ function App() {
       <CenteredPopup popupVisibile={losePopupVisible}>
         <h1>Trapped!</h1>
         <p>You've selected an illusion, and the cat wizard trapped you.</p>
-        <p>You managed to save {lastScore} cats, and your best attempt so far saved {bestScore} cats.</p>
+        <p>You managed to save {lastScore} cats. Your best attempt so far saved {bestScore} cats.</p>
         <button onClick={hideLosePopup}>Try Again</button>
       </CenteredPopup>
 

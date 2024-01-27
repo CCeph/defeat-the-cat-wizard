@@ -79,8 +79,8 @@
   background-image: radial-gradient(#1e5d69, #043645);
   border-radius: 15% / 50%;
   color: white;
-  padding: 8px;
-  font-size: 1rem;
+  padding: 15px;
+  font-size: 1.5rem;
   border: 2px solid var(--dark-brown);
   margin: 10px auto 0px;
 }
