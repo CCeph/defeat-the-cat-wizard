@@ -16,7 +16,10 @@ export default function Game({initialPopupVisibile}) {
   }, []);
   return (
     <div className={"game " + (initialPopupVisibile && "blur")}>
-      <div className="scoreboard"></div>
+      <div className="scoreboard">
+        <p>Current Score: {currentScore}</p>
+        <p>Best Score: {bestScore}</p>
+      </div>
       <CatDisplay setCurrentScore={setCurrentScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats}></CatDisplay>
     </div>
   );

@@ -8,9 +8,15 @@
   filter: blur(4px);
 }
 
-
 .scoreboard {
   flex: 1;
+}
+
+.scoreboard {
+  color: white;
+  text-align: right;
+  padding: 10px;
+  font-size: 1.2rem;
 }
 
 .cat-display {
