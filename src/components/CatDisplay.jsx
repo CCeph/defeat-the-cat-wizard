@@ -19,18 +19,26 @@ function shuffle(array) {
   }
 
 export default function CatDisplay({callNewImages, setCallNewImages,currentScore, setCurrentScore, bestScore, setBestScore, numberOfCats, cats,
-    setLosePopupVisible}) {
+    setLosePopupVisible, setWinPopupVisible, setLastScore}) {
     const [chosenCats, setChosenCats] = useState([]);
 
     function handlePlayerChoice(e) {
         const chosenCatID = e.target.dataset.id;
         if (chosenCats.includes(chosenCatID)) {
             (currentScore > bestScore) && setBestScore(currentScore);
-            setLosePopupVisible(true)
+            setLosePopupVisible(true);
+            setLastScore(currentScore);
             setCurrentScore(0);
             setChosenCats([]);
             setCallNewImages(!callNewImages)
-        } else {
+        } else if (currentScore + 1 === numberOfCats) {
+            setWinPopupVisible(true);
+            setCurrentScore(0);
+            setBestScore(numberOfCats);
+            setChosenCats([]);
+            setCallNewImages(!callNewImages);
+        }
+        else {
             setCurrentScore(currentScore => currentScore + 1)
             setChosenCats([...chosenCats, chosenCatID])
         }

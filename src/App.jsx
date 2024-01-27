@@ -6,8 +6,10 @@ import "./App.css";
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [lastScore, setLastScore] = useState(0);
   const [initialPopupVisibile, setInitialPopupVisible] = useState(true);
   const [losePopupVisible, setLosePopupVisible] = useState(false);
+  const [winPopupVisible, setWinPopupVisible] = useState(false);
 
   function hideInitialPopup() {
     setInitialPopupVisible(false);
@@ -16,6 +18,10 @@ function App() {
   function hideLosePopup() {
     setLosePopupVisible(false);
   }
+
+  function hideWinPopup() {
+    setWinPopupVisible(false);
+  }
   return (
     <>
       <div
@@ -23,15 +29,17 @@ function App() {
           "main-background "
           + (initialPopupVisibile && " blur ")
           + (losePopupVisible && " blur ")
+          + (winPopupVisible && " blur ")
         }
       ></div>
 
       <Game 
       currentScore={currentScore} setCurrentScore={setCurrentScore}
       bestScore={bestScore} setBestScore={setBestScore}
+      setLastScore={setLastScore}
       initialPopupVisibile={initialPopupVisibile}
-      losePopupVisible={losePopupVisible}
-      setLosePopupVisible={setLosePopupVisible}></Game>
+      losePopupVisible={losePopupVisible} setLosePopupVisible={setLosePopupVisible}
+      winPopupVisible={winPopupVisible} setWinPopupVisible={setWinPopupVisible}></Game>
 
       <CenteredPopup popupVisibile={initialPopupVisibile}>
         <h1>Defeat the Evil Cat Wizard</h1>
@@ -56,8 +64,14 @@ function App() {
       <CenteredPopup popupVisibile={losePopupVisible}>
         <h1>Trapped!</h1>
         <p>You've selected an illusion, and the cat wizard trapped you.</p>
-        <p>You managed to save {currentScore} cats, and your best attempt so far saved {bestScore} cats.</p>
+        <p>You managed to save {lastScore} cats, and your best attempt so far saved {bestScore} cats.</p>
         <button onClick={hideLosePopup}>Try Again</button>
+      </CenteredPopup>
+
+      <CenteredPopup popupVisibile={winPopupVisible}>
+        <h1>You Win!</h1>
+        <p>You defeated the cat wizard and saved all the cats.</p>
+        <button onClick={hideWinPopup}>Play Again</button>
       </CenteredPopup>
     </>
   );

@@ -5,8 +5,10 @@ import CatDisplay from "./CatDisplay";
 export default function Game({
   currentScore, setCurrentScore,
   bestScore, setBestScore,
+  setLastScore,
   initialPopupVisibile,
-  losePopupVisible, setLosePopupVisible}) {
+  losePopupVisible, setLosePopupVisible,
+  winPopupVisible, setWinPopupVisible}) {
 
   const [numberOfCats, setNumberOfCats] = useState(10);
   const [cats, setCats] = useState([]);
@@ -21,13 +23,16 @@ export default function Game({
   return (
     <div className={"game "
     + (initialPopupVisibile && " blur")
-    + (losePopupVisible && " blur ")}>
+    + (losePopupVisible && " blur ")
+    + (winPopupVisible && " blur ")}>
       <div className="scoreboard">
         <p>Current Score: {currentScore}</p>
         <p>Best Score: {bestScore}</p>
       </div>
       <CatDisplay currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore} numberOfCats={numberOfCats} cats={cats} callNewImages={callNewImages} setCallNewImages={setCallNewImages}
-      setLosePopupVisible={setLosePopupVisible}></CatDisplay>
+      setLosePopupVisible={setLosePopupVisible}
+      setWinPopupVisible={setWinPopupVisible}
+      setLastScore={setLastScore}></CatDisplay>
     </div>
   );
 }
